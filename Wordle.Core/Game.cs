@@ -36,9 +36,9 @@ public class Game
 
     public void MakeGuess(string guess)
     {
-        var cells = GradeGuess(in guess);
+        var cells = GradeGuess(guess.ToLower());
         Board.SetRow(GuessNum, cells);
-        
+
         ++GuessNum;
 
         if (guess == Answer)
@@ -68,7 +68,7 @@ public class Game
 
         for (var i = 0; i < result.Count; ++i)
         {
-            if (letterCounts.ContainsKey(guess[i]) && letterCounts[guess[i]] > 0)
+            if (guess[i] != Answer[i] && letterCounts.ContainsKey(guess[i]) && letterCounts[guess[i]] > 0)
             {
                 --letterCounts[guess[i]];
                 result[i].GuessStatus = GuessStatus.WrongSpot;
