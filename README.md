@@ -13,7 +13,7 @@ $ git clone "https://github.com/edzdez/wordle-csharp"
 $ cd wordle-csharp
 
 # Run
-$ dotnet build --project Wordle.CLI
+$ dotnet run --project Wordle.CLI
 ```
 
 ## Todo:
